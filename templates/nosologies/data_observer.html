@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %} {{ nosology.nosologyname }} {% endblock %}
+{% block content %}
+  <div class="features">
+      <h1>Data {{ nosology.nosologyname }}</h1>
+      <table>
+          <tr>
+            {% for dat in data %}
+                <td>
+                  {{ dat.value }}
+                </td>
+            {% endfor %}
+          </tr>
+          {% for obs in observer %}
+            <tr>
+                {% for d in obs %}
+                    <td>{{ d.val }}</td>
+                {% endfor %}
+            </tr>
+          {% endfor %}
+      </table>
+      <form action="{% url 'create-data' nosology.url %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <input type="file" name="file">
+          <button type="submit">Load file</button>
+      </form>
+      <a href="{% url 'download' nosology.idnosology %}">Download file</a>
+  </div>
+{% endblock %}

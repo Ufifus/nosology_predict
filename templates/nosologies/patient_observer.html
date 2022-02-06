@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} {{ user.username }} {% endblock %}
+{% block content %}
+    <h1>{{ patient.username }}</h1>
+    <table>
+        {% for data in user_data %}
+            <tr>{% for inf in data %}
+                    <td>{{ inf.val }}</td>
+                {% endfor %}</tr>
+        {% endfor %}
+    </table>
+{% endblock %}

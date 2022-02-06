@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} patients {% endblock %}
+{% block content %}
+  <h1>Patients</h1>
+  <form action="{% url 'p-listfew' %}" method="get">
+    <p><input type="search" placeholder="..." name="quser" required=""></p>
+    <button type="submit">Search</button>
+  </form>
+  {% for patient in patients %}
+    <p>{{ patient.iduser }}: <a href="{% url 'patient-observer' patient.url %}">{{ patient.username }} </a></p>
+  {% endfor %}
+{% endblock %}

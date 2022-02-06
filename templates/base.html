@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <aside>
+        <h2>Navigation</h2>
+        <ul>
+            <a href="{% url 'hall-page' %}"><li>Hall</li></a>
+            <a href="{% url 'n-listall' %}"><li>Nosology</li></a>
+            <a href="{% url 'p-listall' %}"><li>Patients</li></a>
+        </ul>
+        <h2>Account</h2>
+        {% if user.is_authenticated %}
+            <p><a href="{% url 'log-out' %}">Exit</a></p>
+        {% else %}
+            <p><a href="{% url 'log-in' %}"><i class="fas fa-client">Log-in</i></a></p>
+        {% endif %}
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
