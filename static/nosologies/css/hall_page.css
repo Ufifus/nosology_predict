@@ -1,0 +1,28 @@
+.greating {
+    color: #5263f3;
+    text-align: center;
+    font-size: 60px;
+    margin: 200px 0 10px 0;
+}
+
+.greating a {
+    color: black;
+    text-decoration: none;
+}
+
+.navigation {
+    color: #5672f2;
+    font-size: 20px;
+    text-align: center;
+    margin: 40px 0 10px 0;
+}
+
+.navigation a {
+    color: blue;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    color: black;
+    transform: scale(1.5);
+}

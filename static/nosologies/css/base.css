@@ -1,0 +1,51 @@
+.panel {
+    float: left;
+    background: #6495ED;
+    height: 100vh;
+    width: 20%;
+    padding: 2.5%;
+}
+
+.ways {
+    position: relative;
+    padding-bottom: 20px;
+    height: 550px;
+}
+.ways h2 {
+    font-weight: bold;
+}
+.ways ul {
+    list-style: none;
+    margin-top: 30px;
+}
+.ways ul li {
+   color: #F0F8FF;
+   display: block;
+}
+.ways a {
+    color: #F0F8FF;
+    text-decoration: none;
+}
+.ways ul li:hover, .ways ul a:hover {
+    color: black;
+    transform: scale(1.05);
+}
+
+.user {
+    position: relative;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.user a {
+    color: #D3D3D3;
+    text-decoration: none;
+}
+.user a:hover {
+    color: black;
+}
+
+.field {
+    float: right;
+    position: relative;
+    width: 70%;
+}

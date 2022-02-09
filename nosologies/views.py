@@ -5,6 +5,7 @@ from django.db.models import Count
 from django.http import FileResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 
 from .models import *
 from .forms import *
@@ -63,7 +64,7 @@ def UserLogOut(request):
 class NosologyListAll(ListView):
 
     template_name = 'nosologies/list_nosology.html'
-    paginate_by = 20
+    paginate_by = 2
     model = Nosology
     context_object_name = 'nosology'
 
@@ -89,6 +90,7 @@ class SearchNosologyList(ListView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context['q'] = self.request.GET.get("q")
+        context['all'] = True
         return context
 
 
@@ -130,8 +132,11 @@ class NosologyObserverList(View):
                     query = None
                 row.append(query)
             observe.append(row)
+        paginator = Paginator(observe, 20)
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
         context = {
-            'observer': observe,
+            'page_obj': page_obj,
             'data': data,
             'nosology': nosology,
         }
@@ -232,6 +237,7 @@ class PatientsList(ListView):
     model = Patient
     template_name = 'nosologies/list_patients.html'
     context_object_name = 'patients'
+    paginate_by = 20
 
     def get_queryset(self):
         return Patient.objects.all()
@@ -247,6 +253,7 @@ class SearchUserList(ListView):
     model = Patient
     template_name = 'nosologies/list_patients.html'
     context_object_name = 'patients'
+    paginate_by = 20
 
     def get_queryset(self):
         return Patient.objects.filter(username=self.request.GET.get("quser"))
@@ -264,7 +271,6 @@ class PatientObserverList(View):
     def get(self, request, url):
         user = Patient.objects.get(url=url)
         user_data = Observer.objects.filter(iduser=user)
-        print(user_data)
         list_data = []
         mas = []
         i = 0
@@ -276,9 +282,11 @@ class PatientObserverList(View):
                 i = data.cortege
                 print(i)
                 list_data.append(mas)
-        print(list_data)
+        paginator = Paginator(list_data, 20)
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
         context = {
             'patient': user,
-            'user_data': list_data
+            'page_obj': page_obj
         }
         return render(request, 'nosologies/patient_observer.html', context)
