@@ -4,51 +4,33 @@
 }
 
 .u-section-1 .u-sheet-1 {
-  min-height: 50vw;
+  min-height: 787px;
 }
 
 .u-section-1 .u-text-1 {
-  font-family: "Krona One";
-  font-size: 1.5rem;
-  text-align: start;
-  margin: 96px 871px 0 17px;
+  width: 677px;
+  margin: 360px auto 60px;
 }
 
-.u-section-1 .u-table-1 {
-  width: 472px;
-  margin: 13px auto 59px 0;
-}
-
-.u-block-76a0-9 {
-  font-weight: 700;
+.u-section-1 .u-btn-1 {
   background-image: none;
+  padding: 0;
 }
 
 @media (max-width: 1199px) {
-  .u-section-1 .u-text-1 {
-    margin-right: 688px;
-    margin-left: 0;
-  }
-}
-
-@media (max-width: 991px) {
-  .u-section-1 .u-text-1 {
-    margin-right: 468px;
+  .u-section-1 .u-sheet-1 {
+    min-height: 500px;
   }
 }
 
 @media (max-width: 767px) {
   .u-section-1 .u-text-1 {
-    margin-right: 288px;
+    width: 540px;
   }
 }
 
 @media (max-width: 575px) {
   .u-section-1 .u-text-1 {
-    margin-right: 88px;
-  }
-
-  .u-section-1 .u-table-1 {
     width: 340px;
   }
 }
