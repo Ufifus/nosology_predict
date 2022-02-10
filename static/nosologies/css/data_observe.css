@@ -2,25 +2,26 @@
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
-  border: 3px solid purple;
-}
-
-table thead th:nth-child(1) {
-  width: 30%;
-}
-
-table thead th:nth-child(2) {
-  width: 20%;
-}
-
-table thead th:nth-child(3) {
-  width: 15%;
-}
-
-table thead th:nth-child(4) {
-  width: 35%;
+  border: 3px;
 }
 
 th, td {
+  padding: 15px;
+}
+
+caption {
   padding: 20px;
+  font-style: italic;
+  caption-side: bottom;
+  color: #666;
+  text-align: right;
+  letter-spacing: 1px;
+}
+
+td {
+  letter-spacing: 1px;
+}
+
+tbody td {
+  text-align: center;
 }

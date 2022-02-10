@@ -10,7 +10,7 @@
     <title>nosologies</title>
     <link rel="stylesheet" href="{% static 'nosologies/css/nicepage.css' %}" media="screen">
     <link rel="stylesheet" href="{% static 'nosologies/css/nosologies.css' %}" media="screen">
-      <link rel="stylesheet" href="{% static 'nosologies/css/data-observe.css' %}" type="text/css">
+      <link rel="stylesheet" href="{% static 'nosologies/css/data_observe.css' %}" type="text/css">
     <script class="u-script" type="text/javascript" src="{% static 'nosologies/js/jquery-1.9.1.min.js' %}" defer=""></script>
     <script class="u-script" type="text/javascript" src="{% static 'nosologies/js/nicepage.js' %}" defer=""></script>
     <meta name="generator" content="Nicepage 4.4.3, nicepage.com">
@@ -81,12 +81,13 @@
           {% for obs in page_obj %}
             <tr>
                 {% for d in obs %}
-                    <th scope="col">{{ d.val }}</th>
+                    <td>{{ d.val }}</td>
                 {% endfor %}
             </tr>
           {% endfor %}
           </tbody>
       </table>
+  </div>
       <div class="pagination">
             <span class="step-links">
                 {% if page_obj.has_previous %}

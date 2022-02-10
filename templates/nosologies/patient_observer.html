@@ -10,6 +10,7 @@
     <title>Patients</title>
     <link rel="stylesheet" href="{% static 'nosologies/css/nicepage.css' %}" media="screen">
     <link rel="stylesheet" href="{% static 'nosologies/css/Patients.css' %}" media="screen">
+      <link rel="stylesheet" href="{% static 'nosologies/css/data_observe.css' %}" type="text/css">
     <script class="u-script" type="text/javascript" src="{% static 'nosologies/js/jquery-1.9.1.min.js' %}" defer=""></script>
     <script class="u-script" type="text/javascript" src="{% static 'nosologies/js/nicepage.js' %}" defer=""></script>
     <meta name="generator" content="Nicepage 4.4.3, nicepage.com">
@@ -66,16 +67,18 @@
           </div>
         </nav>
       </div></header>
-
-    <h1>{{ patient.username }}</h1>
-    <table>
-        {% for data in page_obj %}
-            <tr>{% for inf in data %}
+      <div class="features">
+          <table>
+              <caption>{{ patient.username }}</caption>
+              <tbody>
+              {% for data in page_obj %}
+                <tr>{% for inf in data %}
                     <td>{{ inf.val }}</td>
                 {% endfor %}</tr>
-        {% endfor %}
-
-    </table>
+            {% endfor %}
+              </tbody>
+          </table>
+      </div>
     <div class="pagination">
         <span class="step-links">
             {% if page_obj.has_previous %}
