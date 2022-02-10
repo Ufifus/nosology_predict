@@ -36,7 +36,7 @@ def User_Login(request):
                 return HttpResponse('Invalid login')
     else:
         form = LoginForm()
-    return render(request, 'shablonnosology/login.html', {'form': form})
+    return render(request, 'nosologies/login.html', {'form': form})
 
 
 """Страница с регистраций нового пользователя"""
