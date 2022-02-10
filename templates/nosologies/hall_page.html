@@ -30,7 +30,7 @@
     <section class="u-clearfix u-image u-section-1" id="sec-7cc0" data-image-width="1280" data-image-height="1083">
       <div class="u-clearfix u-sheet u-sheet-1">
         {% if user.is_authenticated %}
-                <h2 class="u-text u-text-palette-3-dark-2 u-text-1">&nbsp; Welcome, {{ user.username }}
+                <h2 class="u-text u-text-palette-3-dark-2 u-text-1">&nbsp; Welcome, {{ user.username }}.<a href="{% url 'n-listall' %}">-> </a>
         </h2>
             {% else %}
                 <h2 class="u-text u-text-palette-3-dark-2 u-text-1">&nbsp; Welcome, new user. Please&nbsp;<a href="{% url 'log-in' %}" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">log-in.</a>

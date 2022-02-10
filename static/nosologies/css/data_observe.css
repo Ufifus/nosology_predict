@@ -1,0 +1,26 @@
+.features table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid purple;
+}
+
+table thead th:nth-child(1) {
+  width: 30%;
+}
+
+table thead th:nth-child(2) {
+  width: 20%;
+}
+
+table thead th:nth-child(3) {
+  width: 15%;
+}
+
+table thead th:nth-child(4) {
+  width: 35%;
+}
+
+th, td {
+  padding: 20px;
+}
