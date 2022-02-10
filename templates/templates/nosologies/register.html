@@ -1,6 +1,5 @@
-{% load static %}
-<!DOCTYPE html>
-<html style="font-size: 16px;">
+{% extends "base.html" %}
+html style="font-size: 16px;">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
@@ -64,6 +63,7 @@
 {% block title %}Create an account{% endblock %}
 
 {% block content %}
+
     <h1>Create an account</h1>
     <p>Please, sign up using the following form:</p>
     <form method="post">
@@ -71,14 +71,10 @@
         {{ user_form.as_p }}
         <p><input type="submit" value="Create my account"></p>
     </form>
+
 {% endblock %}
  <input type="submit" value="submit" class="u-form-control-hidden">
-            </div>
-            <div class="u-form-send-message u-form-send-success"> Thank you, registration completed </div>
-            <div class="u-form-send-error u-form-send-message"> Registration failed. Please correct the errors and try again. </div>
-            <input type="hidden" value="" name="recaptchaResponse">
-          </form>
-        </div>
+
       </div>
     </section>
 
